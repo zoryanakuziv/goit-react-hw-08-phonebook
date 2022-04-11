@@ -11,6 +11,7 @@ import AppButton from 'components/buttons/AppButton';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout } from 'redux/auth/authOperations';
 import CssBaseline from '@mui/material/CssBaseline';
+import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
 
 export default function Navbar() {
   let navigate = useNavigate();
@@ -39,6 +40,12 @@ export default function Navbar() {
             </Typography>
 
             {authSelector && (
+              <AppButton onClick={() => navigate('contacts')}>
+                <ContactPhoneIcon />
+              </AppButton>
+            )}
+
+            {authSelector && (
               <Typography
                 variant="h7"
                 component="div"
@@ -49,6 +56,7 @@ export default function Navbar() {
                 Add contact
               </Typography>
             )}
+
             {authSelector && (
               <AppButton onClick={() => navigate('add')}>
                 <AddIcon />

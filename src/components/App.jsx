@@ -10,6 +10,7 @@ const AddContactView = lazy(() => import('views/AddContactView'));
 const RegisterView = lazy(() => import('views/RegisterView'));
 const LoginView = lazy(() => import('views/LogInView'));
 const HomeView = lazy(() => import('views/HomeView'));
+const ContactsView = lazy(() => import('views/ContactsView'));
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -27,7 +28,7 @@ export const App = () => {
         <Routes>
           <Route index element={<HomeView />} />
           <Route path="add" element={<AddContactView />} />
-
+          <Route path="contacts" element={<ContactsView />} />
           <Route path="register" element={<RegisterView />} />
           <Route path="login" element={<LoginView />} />
 
